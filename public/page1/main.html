@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Login Page</title>
+</head>
+<body>
+    <h2>Login to your account</h2>
+    <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+        <button type="button" onclick="submitForm()">Login</button>
+    </form>
+
+    <script>
+        document.getElementById('email').addEventListener('input', function() {
+            localStorage.setItem('email', this.value);
+        });
+
+        document.getElementById('password').addEventListener('input', function() {
+            localStorage.setItem('password', this.value);
+        });
+
+        function submitForm() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
+
+            alert("Data telah disimpan ke localstorage.");
+        }
+    </script>
+</body>
+</html>

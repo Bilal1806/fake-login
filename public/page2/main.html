@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Web 2</title>
+</head>
+<body>
+    <h2>Halaman Web 2 - Monitoring Input</h2>
+    <p>Email: <span id="emailDisplay"></span></p>
+    <p>Password: <span id="passwordDisplay"></span></p>
+    <script>
+        function updateDisplay() {
+            var email = localStorage.getItem('email');
+            var password = localStorage.getItem('password');
+
+            document.getElementById('emailDisplay').textContent = email || "Data Kosong!";
+            document.getElementById('passwordDisplay').textContent = password || "Data Kosong!";
+        }
+
+        // Update display setiap detik
+        setInterval(updateDisplay, 1000);
+
+        // Update display saat halaman dimuat
+        document.addEventListener("DOMContentLoaded", updateDisplay);
+    </script>
+</body>
+</html>

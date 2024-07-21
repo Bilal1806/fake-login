@@ -1,0 +1,7 @@
+{
+    "public": "public",
+    "rewrites": [
+        { "source": "/page1", "destination": "/page1/index.html" },
+        { "source": "/page2", "destination": "/page2/index.html" }
+    ]
+}
